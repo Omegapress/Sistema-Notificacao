@@ -12,7 +12,7 @@ namespace SistemaNotificacao
         {
             //Inicio do Programa de notificação de Cliente
 
-            Console.WriteLine("*** Sistema de notificação de clientes 1.1***");
+            Console.WriteLine("*** Sistema de notificação de clientes 1.2***");
             Console.WriteLine("Informe código do cliente");
             var CodCliente = Console.ReadLine();
             Console.WriteLine("Informe mensagem a ser enviada: ");
@@ -25,8 +25,7 @@ namespace SistemaNotificacao
 
                 //SIMULA O ENVIO NO MODO EMAIL
 
-                Console.WriteLine("Enviado EMAIL para o cliente {0}", CodCliente);
-                Console.WriteLine("EMAIL: {0}", Mensagem);               
+                EnviarEmail(CodCliente, Mensagem);
 
             }
 
@@ -36,21 +35,46 @@ namespace SistemaNotificacao
 
                 //SIMULA O ENVIO NO MODO SMS
 
-                Console.WriteLine("Enviado SMS para o cliente {0}", CodCliente);
-                Console.WriteLine("SMS: {0}", Mensagem);
+                EnviarSMS(CodCliente, Mensagem);
 
             }
 
             else if (modoEnvio == "3")
             {
-                //SIMULA O ENVIO NO MODO VOICE
+                
 
-                Console.WriteLine("Enviado VOICEMAIL para o cliente {0}", CodCliente);
-                Console.WriteLine("VOICEMAIL: {0}", Mensagem);
+                EnviarVoiceMail(CodCliente, Mensagem);
 
             }
 
             Console.ReadLine();
+
+        }
+
+        private static void EnviarVoiceMail(string CodCliente, string Mensagem)
+        {
+
+            // Simula gravação de um VoiceMail
+            Console.WriteLine("Enviando VoiceMail para o cliente {0}", CodCliente);
+            Console.WriteLine("VoiceMail: {0}", Mensagem);
+
+        }
+
+        private static void EnviarSMS(string CodCliente, string Mensagem)
+        {
+
+            // Simula gravação de um SMS
+            Console.WriteLine("Enviando SMS para o cliente {0}", CodCliente);
+            Console.WriteLine("SMS: {0}", Mensagem);
+
+        }
+
+        private static void EnviarEmail(string CodCliente, string Mensagem)
+        {
+
+            // Simula gravação de um Email
+            Console.WriteLine("Enviando e-mail para o cliente {0}", CodCliente);
+            Console.WriteLine("EMAIL: {0}", Mensagem);
 
         }
 
